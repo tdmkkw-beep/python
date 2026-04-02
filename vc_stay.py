@@ -1,9 +1,9 @@
+import os
 import discord
-import asyncio
-import sys
+from discord.ext import commands
 
 # ====================== AYARLAR ======================
-TOKEN = ""
+TOKEN = os.getenv("TOKEN")
 
 # Komut kullanabilecek kişilerin Discord ID'leri (birden fazla ekleyebilirsin)
 ADMINS = [1260707131284520960]
