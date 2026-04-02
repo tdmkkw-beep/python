@@ -1,7 +1,7 @@
 import os
 import discord
-from discord.ext import commands
-
+import asyncio  # Eksik olan buydu
+import sys      # Eksik olan buydu
 # ====================== AYARLAR ======================
 TOKEN = os.getenv("TOKEN")
 
@@ -13,7 +13,10 @@ SELF_DEAF = True      # True = kendini sağır yap (önerilen)
 SELF_MUTE = False     # True = kendini sustur
 # ====================================================
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.messages = True
+intents.message_content = True  # Mesajları okuması için bu şart!
+client = discord.Client(intents=intents)
 ses_dongusu = False
 aktif_vc = None
 
